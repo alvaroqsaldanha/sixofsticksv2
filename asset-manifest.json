@@ -1,0 +1,16 @@
+{
+  "files": {
+    "main.css": "/sixofsticksv2/static/css/main.f855e6bc.css",
+    "main.js": "/sixofsticksv2/static/js/main.5b1a5f50.js",
+    "static/js/453.38ea33bb.chunk.js": "/sixofsticksv2/static/js/453.38ea33bb.chunk.js",
+    "static/media/logo.svg": "/sixofsticksv2/static/media/logo.6ce24c58023cc2f8fd88fe9d219db6c6.svg",
+    "index.html": "/sixofsticksv2/index.html",
+    "main.f855e6bc.css.map": "/sixofsticksv2/static/css/main.f855e6bc.css.map",
+    "main.5b1a5f50.js.map": "/sixofsticksv2/static/js/main.5b1a5f50.js.map",
+    "453.38ea33bb.chunk.js.map": "/sixofsticksv2/static/js/453.38ea33bb.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.f855e6bc.css",
+    "static/js/main.5b1a5f50.js"
+  ]
+}
