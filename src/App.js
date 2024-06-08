@@ -54,10 +54,6 @@ import queenofdiamonds2 from './Assets/imgs/cards/queenofdiamonds2.png';
 import queenofhearts2 from './Assets/imgs/cards/queenofhearts2.png';
 import queenofspades2 from './Assets/imgs/cards/queenofspades2.png';
 
-const Card = ({ card, onClick }) => (
-    <img src={card} alt={card} style={{ width: '70%', height: '70%', cursor: 'pointer', display: 'block' }} onClick={onClick} />
-);
-
 const NUM_CARDS = 54;
 
 const shuffleArray = (array) => {
@@ -68,8 +64,15 @@ const shuffleArray = (array) => {
     return array;
 };
 
+const preloadImages = (imageArray) => {
+    imageArray.forEach((imageSrc) => {
+        const img = new Image();
+        img.src = imageSrc;
+    });
+};
+
 const App = () => {
-     const cards = [
+    const cards = [
         _2ofclubs, _2ofdiamonds, _2ofhearts, _2ofspades,
         _3ofclubs, _3ofdiamonds, _3ofhearts, _3ofspades,
         _4ofclubs, _4ofdiamonds, _4ofhearts, _4ofspades,
@@ -83,7 +86,8 @@ const App = () => {
         queenofclubs2, queenofdiamonds2, queenofhearts2, queenofspades2,
         kingofclubs2, kingofdiamonds2, kingofhearts2, kingofspades2,
         aceofclubs, aceofdiamonds, aceofhearts, aceofspades, blackjoker, redjoker
-     ];
+    ];
+
     const [shuffledCards, setShuffledCards] = useState([]);
     const [currentIndex, setCurrentIndex] = useState(0);
 
@@ -91,15 +95,12 @@ const App = () => {
         const initialCards = Array.from({ length: NUM_CARDS }, (_, index) => index);
         const shuffled = shuffleArray(initialCards);
         setShuffledCards(shuffled);
+        preloadImages(cards);
     }, []);
 
-    function handleNewCard() {
-        setCurrentIndex((prevIndex) => {
-            const nextIndex = prevIndex + 1;
-            console.log(shuffledCards.length)
-            return nextIndex >= NUM_CARDS ? 0 : nextIndex;
-        });
-    }
+    const handleNewCard = () => {
+        setCurrentIndex((prevIndex) => (prevIndex + 1) % NUM_CARDS);
+    };
 
     return (
         <div style={{ backgroundColor: 'green', height: '100vh', display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center' }}>
@@ -108,7 +109,6 @@ const App = () => {
                 <img src={cards[shuffledCards[currentIndex]]} alt="Random Card" style={{ maxWidth: '50%', height: 'auto', cursor: 'pointer', display: 'block' }} onClick={handleNewCard} />
             </div>
         </div>
-
     );
 };
 
