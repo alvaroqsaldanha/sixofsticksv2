@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/sixofsticksv2/static/css/main.e6c13ad2.css",
-    "main.js": "/sixofsticksv2/static/js/main.80a20026.js",
+    "main.js": "/sixofsticksv2/static/js/main.de14a3a1.js",
     "static/js/453.3d773e4a.chunk.js": "/sixofsticksv2/static/js/453.3d773e4a.chunk.js",
     "static/media/queenofclubs2.png": "/sixofsticksv2/static/media/queenofclubs2.ef480115313c1c393699.png",
     "static/media/kingofhearts2.png": "/sixofsticksv2/static/media/kingofhearts2.67c7a87603fdc5b5e2f7.png",
@@ -58,11 +58,11 @@
     "static/media/2ofdiamonds.png": "/sixofsticksv2/static/media/2ofdiamonds.a51b192d2f2ba1fc1d53.png",
     "index.html": "/sixofsticksv2/index.html",
     "main.e6c13ad2.css.map": "/sixofsticksv2/static/css/main.e6c13ad2.css.map",
-    "main.80a20026.js.map": "/sixofsticksv2/static/js/main.80a20026.js.map",
+    "main.de14a3a1.js.map": "/sixofsticksv2/static/js/main.de14a3a1.js.map",
     "453.3d773e4a.chunk.js.map": "/sixofsticksv2/static/js/453.3d773e4a.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.e6c13ad2.css",
-    "static/js/main.80a20026.js"
+    "static/js/main.de14a3a1.js"
   ]
 }
