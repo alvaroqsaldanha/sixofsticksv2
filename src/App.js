@@ -90,6 +90,7 @@ const App = () => {
 
     const [shuffledCards, setShuffledCards] = useState([]);
     const [currentIndex, setCurrentIndex] = useState(0);
+    const [clickable, setClickable] = useState(true);
 
     useEffect(() => {
         const initialCards = Array.from({ length: NUM_CARDS }, (_, index) => index);
@@ -99,14 +100,19 @@ const App = () => {
     }, []);
 
     const handleNewCard = () => {
-        setCurrentIndex((prevIndex) => (prevIndex + 1) % NUM_CARDS);
+        const nextIndex = (currentIndex + 1) % NUM_CARDS;
+        setCurrentIndex(nextIndex);
+        if (cards[shuffledCards[nextIndex]] === _6ofclubs) {
+            setClickable(false);
+
+        }
     };
 
     return (
         <div style={{ backgroundColor: 'green', height: '100vh', display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center' }}>
             <h1 style={{ color: 'white' }}>{NUM_CARDS - currentIndex} Cards Left</h1>
             <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
-                <img src={cards[shuffledCards[currentIndex]]} alt="Random Card" style={{ maxWidth: '50%', height: 'auto', cursor: 'pointer', display: 'block' }} onClick={handleNewCard} />
+                <img src={cards[shuffledCards[currentIndex]]} alt="Random Card" style={{ maxWidth: '70%', height: 'auto', cursor: 'pointer', display: 'block' }} onClick={clickable ? handleNewCard : null} />
             </div>
         </div>
     );
